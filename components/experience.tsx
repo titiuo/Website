@@ -4,28 +4,28 @@ import { Briefcase } from "lucide-react"
 
 const experiences = [
   {
-    title: "Senior Software Engineer",
-    company: "Tech Company",
-    period: "2023 - Present",
+    title: "Research Intern",
+    company: "Academic Research Lab",
+    period: "Summer 2024",
     description:
-      "Leading development of core platform features and mentoring junior developers. Architected scalable solutions serving millions of users.",
-    skills: ["React", "Node.js", "AWS", "TypeScript"],
+      "Conducted research on machine learning algorithms for computer vision applications. Implemented novel approaches for image classification and worked on improving model efficiency.",
+    skills: ["Python", "PyTorch", "Computer Vision", "Deep Learning"],
   },
   {
-    title: "Software Engineer",
-    company: "Startup Inc",
-    period: "2021 - 2023",
+    title: "Teaching Assistant",
+    company: "University",
+    period: "2023 - 2024",
     description:
-      "Built and maintained multiple client-facing applications. Improved performance by 40% through optimization and refactoring.",
-    skills: ["Next.js", "PostgreSQL", "Docker", "GraphQL"],
+      "Assisted professors in mathematics and programming courses. Helped students understand complex concepts in linear algebra, statistics, and Python programming.",
+    skills: ["Mathematics", "Python", "Teaching", "Problem Solving"],
   },
   {
-    title: "Junior Developer",
-    company: "Digital Agency",
-    period: "2020 - 2021",
+    title: "Data Science Project",
+    company: "Personal Project",
+    period: "2023",
     description:
-      "Developed responsive websites and web applications for various clients. Collaborated with designers to implement pixel-perfect UIs.",
-    skills: ["JavaScript", "React", "CSS", "REST APIs"],
+      "Developed end-to-end machine learning projects including data collection, preprocessing, model training, and deployment. Focused on practical applications of ML algorithms.",
+    skills: ["Data Science", "Machine Learning", "Statistics", "Visualization"],
   },
 ]
 
