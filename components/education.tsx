@@ -27,11 +27,49 @@ const education = [
     gpa: "GPA: -/4.0",
   },
   {
-    degree: "General Baccalaureate",
+    degree: "Master of Science in Engineering",
     degreeLink: null,
-    institutions: [{ name: "High School", link: null }],
-    period: "2020 - 2023",
-    description: "General education with specialization in mathematics and sciences. Development of logical foundations necessary for advanced mathematical studies.",
+    institutions: [
+      { name: "Télécom Paris", link: "https://www.telecom-paris.fr/" }
+    ],
+    period: "Sept. 2023 - June 2026", 
+    description: "A prestigious French Grande École of engineering (part of Institut Polytechnique de Paris), offering a rigorous MSc in Engineering with strong foundations in mathematics, computer science, and physics, complemented by training in innovation and research.",
+    coursework: [
+      {
+        category: "Image",
+        subcourses: [
+          "3D computer vision and video",
+          "Biomedical imaging",
+          "Coherent imaging, source separation, remote sensing and industrial applications",
+          "Introduction to image processing ",
+          "Machine learning for images and object recognition",
+          "Generative Models, Patch-based Methods, and Computational Photography",
+          "Variational and Bayesian methods & discrete optimization"
+        ]
+      },
+      {
+        category: "Signal Processing for Artificial Intelligence", 
+        subcourses: [
+          "Introduction to deep learning ",
+          "Machine Learning ",
+          "Machine Learning for Text Mining ",
+          "Optimization for Machine Learning ",
+          "Representation of signals ",
+          "Speech and audio processing ",
+          "Statistics: linear models ",
+          "Time series "
+        ]
+      }
+    ],
+    gpa: "GPA: 3.92/4.0", 
+  },
+  {
+    degree: "Preparatory Class for Grandes Écoles Science Track PC*",
+    degreeLink: null,
+    institutions: [{ name: "Lycée Chaptal", link: null }],
+    period: "Sept. 2021 – June 2023",
+    description: "Intensive program preparing for highly competitive entry into France's top engineering schools.",
+    gpa: "GPA: 4.0/4.0",
   },
 ]
 
@@ -101,7 +139,7 @@ export function Education() {
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed mb-4">{item.description}</p>
                 
-                {item.coursework && (
+                {(item.coursework || item.gpa) && (
                   <Collapsible open={openCourses[index]} onOpenChange={() => toggleCourses(index)}>
                     <CollapsibleTrigger className="flex items-center gap-2 text-sm text-foreground hover:underline cursor-pointer">
                       <span>Courses and Grades</span>
@@ -114,17 +152,36 @@ export function Education() {
                         <div className="mb-3">
                           <span className="font-semibold text-foreground">{item.gpa}</span>
                         </div>
-                        <div>
-                          <h4 className="font-semibold mb-2">Coursework:</h4>
-                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-1 text-sm text-muted-foreground">
-                            {item.coursework.map((course, courseIndex) => (
-                              <li key={courseIndex} className="flex items-center gap-2">
-                                <span className="text-primary text-xs">•</span>
-                                <span>{course}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                        {item.coursework && (
+                          <div>
+                            <h4 className="font-semibold mb-2">Coursework:</h4>
+                            <div className="space-y-3">
+                              {item.coursework.map((courseGroup, groupIndex) => (
+                              typeof courseGroup === 'string' ? (
+                                <div key={groupIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
+                                  <span className="text-primary text-xs">•</span>
+                                  <span>{courseGroup}</span>
+                                </div>
+                              ) : (
+                                <div key={groupIndex} className="space-y-2">
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-primary text-xs">•</span>
+                                    <h5 className="font-medium text-foreground text-sm">{courseGroup.category}</h5>
+                                  </div>
+                                  <ul className="ml-4 space-y-1">
+                                    {courseGroup.subcourses.map((subcourse, subcourseIndex) => (
+                                      <li key={subcourseIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
+                                        <span className="text-primary text-xs">◦</span>
+                                        <span>{subcourse}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </CollapsibleContent>
                   </Collapsible>

@@ -4,28 +4,19 @@ import { Briefcase } from "lucide-react"
 
 const experiences = [
   {
-    title: "Research Intern",
-    company: "Academic Research Lab",
-    period: "Summer 2024",
+    title: "Private Tutor",
+    period: "Sept. 2024 – Nov. 2024",
     description:
-      "Conducted research on machine learning algorithms for computer vision applications. Implemented novel approaches for image classification and worked on improving model efficiency.",
-    skills: ["Python", "PyTorch", "Computer Vision", "Deep Learning"],
+      "Provided mathematics tutoring to a student from L'École du Louvre, who passed the entrance exam for the Master's program at ESSEC Business School.",
   },
   {
-    title: "Teaching Assistant",
-    company: "University",
-    period: "2023 - 2024",
+    title: "Farm Intern at",
+    company: "GoodMoon Farm",
+    companyLink: "https://www.goodmoonfarm.com",
+    period: "Jul. 2024 – Aug. 2024",
+    location: "British Virgin Islands",
     description:
-      "Assisted professors in mathematics and programming courses. Helped students understand complex concepts in linear algebra, statistics, and Python programming.",
-    skills: ["Mathematics", "Python", "Teaching", "Problem Solving"],
-  },
-  {
-    title: "Data Science Project",
-    company: "Personal Project",
-    period: "2023",
-    description:
-      "Developed end-to-end machine learning projects including data collection, preprocessing, model training, and deployment. Focused on practical applications of ML algorithms.",
-    skills: ["Data Science", "Machine Learning", "Statistics", "Visualization"],
+      "Completed an internship on a local farm specializing in organic food production.",
   },
 ]
 
@@ -48,22 +39,25 @@ export function Experience() {
                   <Briefcase className="h-6 w-6 text-primary" />
                 </div>
                 <div className="flex-1">
-                  <CardTitle className="text-xl mb-1">{item.title}</CardTitle>
+                  <CardTitle className="text-xl mb-1">
+                    {item.title}{" "}
+                    {item.companyLink ? (
+                      <a href={item.companyLink} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                        {item.company}
+                      </a>
+                    ) : (
+                      item.company
+                    )}
+                  </CardTitle>
                   <CardDescription className="text-base">
-                    {item.company} • {item.period}
+                    {item.location && `${item.location} • `}
+                    {item.period}
                   </CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground leading-relaxed mb-4">{item.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {item.skills.map((skill, skillIndex) => (
-                  <Badge key={skillIndex} variant="secondary">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
+              <p className="text-muted-foreground leading-relaxed">{item.description}</p>
             </CardContent>
           </Card>
         ))}
