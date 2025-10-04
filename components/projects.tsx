@@ -9,6 +9,14 @@ import { useState } from "react"
 
 const projects = [
   {
+    title: "Automatic classification of works of art",
+    description: "Unsupervised learning project on the classification of 8,700 paintings by artistic style using handcrafted features (color, texture) and deep representations (ResNet50, CLIP). Conducted at Télécom Paris as part of my studies in image analysis.",
+    tags: ["Unsupervised Clustering","PCA","Deep Representations"],
+    image: "/Whitehousenight.jpg",
+    github: "https://github.com/titiuo/Automatic-classification-of-works-of-art",
+    report: "/Report on the Classification of Artworks.pdf",
+  },
+  {
     title: "Cardiac MRI Segmentation",
     description:
       "Medical imaging project focusing on left ventricle segmentation in cardiac MRI from 150 patients using fundamental image processing techniques. Part of my studies at Télécom Paris, analyzing various cardiac pathologies without AI.",
