@@ -9,6 +9,14 @@ import { useState } from "react"
 
 const projects = [
   {
+    title: "Kalman Filters",
+    description: "This research provides a rigorous comparative evaluation of Classical Kalman Filter (CKF), Deep Kalman Filter (DKF) and KalmanVariational Autoencoder (KVAE) on a non-linear Bouncing Ball benchmark.",
+    tags: ["Kalman Filters", "State-Space Models", "Time Series Analysis"],
+    image: "/kalman.png",
+    github: null,
+    report: "/Kalman_Filters.pdf",
+  },
+  {
     title: "Personalized Convolutional Dictionary Learning",
     description: "PyTorch implementation of Personalized Convolutional Dictionary Learning for extracting interpretable, subject-specific patterns from multi-sensor gait analysis data using sparse coding.",
     tags: ["Clinical Gait Analysis", "Convolutional Dictionary Learning", "PyTorch"],
@@ -83,12 +91,14 @@ export function Projects() {
                 ))}
               </div>
               <div className="flex gap-2">
-                <Button size="sm" variant="outline" className="gap-2 bg-transparent" asChild>
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="h-4 w-4" />
-                    Code
-                  </a>
-                </Button>
+                {project.github && (
+                  <Button size="sm" variant="outline" className="gap-2 bg-transparent" asChild>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="h-4 w-4" />
+                      Code
+                    </a>
+                  </Button>
+                )}
                 {project.report && (
                   <Dialog>
                     <DialogTrigger asChild>
