@@ -9,6 +9,22 @@ import { useState } from "react"
 
 const projects = [
   {
+    title: "Zero123++: a Single Image to Consistent Multi-view Diffusion Base Model",
+    description: "This report presents an analysis of the paper Zero123++, a recent method for consistent multi-view generation from a single image using diffusion models.",
+    tags: ["Diffusion Models", "Multi-view Generation"],
+    image: "/zero.png",
+    github: null,
+    report: "/Zero123.pdf",
+  },
+  {
+    title: "Analysis of Gaussian Splatting and implementation of 2D",
+    description: "This report presents an analysis of 3D Gaussian Splatting, a recent method for real-time radiance field rendering.",
+    tags: ["Gaussian Splatting", "Radiance Fields", "Real-Time Rendering"],
+    image: "/gaussian_splatting.png",
+    github: null,
+    report: "/Gaussian_Splatting_Report.pdf",
+  },
+  {
     title: "Kalman Filters",
     description: "This research provides a rigorous comparative evaluation of Classical Kalman Filter (CKF), Deep Kalman Filter (DKF) and KalmanVariational Autoencoder (KVAE) on a non-linear Bouncing Ball benchmark.",
     tags: ["Kalman Filters", "State-Space Models", "Time Series Analysis"],
