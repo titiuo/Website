@@ -17,12 +17,16 @@ const education = [
     period: "Sept. 2025 - June 2026",
     description: "A rigorous research master dedicated to the study and development of advanced mathematical methods for data analysis. The program emphasizes a strong foundation in theoretical mathematics, algorithm design, and machine learning, with hands-on applications in computer vision, biomedical imaging, and complex data-driven problems.",
     coursework: [
-      "Probabilistic Graphical Models",
-      "Reinforcement Learning", 
+      "Probabilistic Graphical Models", 
       "Optimal Transport",
       "Time Series",
       "Geometry Processing and Geometric Deep Learning",
-      "Geometric Data Analysis"
+      "Geometric Data Analysis",
+      "Graphs in machine learning",
+      "3D Point Cloud and Modeling",
+      "Reproductible research project",
+      "Representation Learning for Computer Vision and Medical Imaging",
+      "Clinical Project Intern"
     ],
     gpa: "GPA: -/4.0",
   },
