@@ -9,6 +9,14 @@ import { useState } from "react"
 
 const projects = [
   {
+    title: "Personalized Convolutional Dictionary Learning",
+    description: "PyTorch implementation of Personalized Convolutional Dictionary Learning for extracting interpretable, subject-specific patterns from multi-sensor gait analysis data using sparse coding.",
+    tags: ["Clinical Gait Analysis", "Convolutional Dictionary Learning", "PyTorch"],
+    image: "/percdl.png",
+    github: "https://github.com/titiuo/PerCDL-PyTorch",
+    report: "/PerCDL.pdf",
+  },
+  {
     title: "Automatic classification of works of art",
     description: "Unsupervised learning project on the classification of 8,700 paintings by artistic style using handcrafted features (color, texture) and deep representations (ResNet50, CLIP). Conducted at Télécom Paris as part of my studies in image analysis.",
     tags: ["Unsupervised Clustering","PCA","Deep Representations"],
